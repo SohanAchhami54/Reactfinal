@@ -27,7 +27,8 @@ const Event = ({
   return (
     <div className='bg-white border border-gray-100 shadow-xl p-4 rounded-2xl'>
         <h1 className='text-xl font-bold tracking-tight mb-2'> {task} </h1>
-       <form onSubmit={recent?handleClick:undefined}>
+       {/* <form onSubmit={recent?handleClick:undefined}> */} 
+       <form>
         <div className=' flex flex-col gap-2 '>
         
         {/* Username  */}
@@ -45,7 +46,9 @@ const Event = ({
         className='border border-gray-200 rounded-lg px-3 py-2 focus:border-blue-500 focus:ring-2  outline-none' />
 
         {/* button  */}
-         <button onClick={handleClick} 
+          {/* <button> */}
+         <button onClick={recent?handleClick:undefined}  
+       
           className='mt-1 bg-blue-500 hover:bg-blue-600 active:scale-95 text-white text-sm font-medium py-2 transition-all duration-200  ease-linear'>Submit</button>
         
        {recent &&  recentUser &&
