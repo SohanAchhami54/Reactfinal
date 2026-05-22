@@ -1,0 +1,9 @@
+@import "tailwindcss";
+.no-eye::-ms-reveal,
+.no-eye::-ms-clear {
+  display: none;
+}
+
+.no-eye::-webkit-credentials-auto-fill-button {
+  display: none !important;
+}
