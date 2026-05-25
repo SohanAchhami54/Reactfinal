@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Inline = () => {
     const laptops = [
@@ -35,6 +35,8 @@ const Inline = () => {
     storage: "1TB SSD"
   }
 ];
+
+const [hoverid,setHoverid]=useState(null)
   return (
     <div style={{marginTop:'20px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
       <h1 style={{textAlign:'center'}}>This is Inline Css.</h1>
@@ -49,7 +51,11 @@ const Inline = () => {
                             <span>Ram:{lap.ram}</span> 
                             <span>Storage:{lap.storage} </span>
                          </div>
-                          <button style={{padding:'5px',color:'white',borderRadius:'10px',backgroundColor:'blue'}}>Click me</button>
+                          <button 
+                          onMouseEnter={()=>setHoverid(lap.id)} 
+                          onMouseLeave={()=>setHoverid(null)}
+                           style={{padding:'5px',color:'white',borderRadius:'10px',backgroundColor:hoverid===lap.id?'darkblue':'blue'
+                           }}>Click me</button>
                     </li>
                 ))
             }
