@@ -49,6 +49,7 @@ const Inline = () => {
                             <span>Ram:{lap.ram}</span> 
                             <span>Storage:{lap.storage} </span>
                          </div>
+                          <button style={{padding:'5px',color:'white',borderRadius:'10px',backgroundColor:'blue'}}>Click me</button>
                     </li>
                 ))
             }
