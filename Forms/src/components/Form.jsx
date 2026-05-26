@@ -49,6 +49,7 @@ const Form = () => {
         ref={nameRef}
         value={data.name} 
         onChange={handleChange}
+        required
         className='outline-none border-2 focus:ring-2 rounded-md w-60'
         />
         </div>
@@ -60,6 +61,7 @@ const Form = () => {
         id='email' 
         value={data.email} 
         onChange={handleChange} 
+        required
        
         className='outline-none border-2 focus:ring-2 rounded-md w-60'
         />
@@ -74,6 +76,7 @@ const Form = () => {
         onChange={handleChange}
         minLength={6}
         maxLength={20}
+        required
         className='outline-none border-2 focus:ring-2 rounded-md w-60'
         />
         </div>
