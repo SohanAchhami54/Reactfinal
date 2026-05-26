@@ -12,10 +12,6 @@ const Form = () => {
 
     
     const handleChange=(e)=>{
-        // console.log('The value of e is:',e)
-        // console.log('The value of e.target is:',e.target) 
-        // console.log('The value of e.target.id is:',e.target.id)   
-        
         const {id,value}=e.target 
         setData({...data,[id]:value})
     }
