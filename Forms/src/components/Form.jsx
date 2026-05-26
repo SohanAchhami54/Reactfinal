@@ -81,7 +81,7 @@ const Form = () => {
         />
         </div>
 
-        <button className='px-2 bg-blue-500 rounded-md text-white' 
+        <button className='px-6 py-1 bg-blue-500 rounded-md text-white' 
          onClick={focusInput}
         >Submit</button>
         {
