@@ -16,6 +16,7 @@
     return (
       <>
         <div className='bg-gray-500 text-white text-xl min-h-screen flex flex-col items-center justify-center gap-2'>
+          <h1>UseEffect to fetch data on component mount and fetch random user data on load also.</h1>
           <div className='overflow-hidden'>
                 <img src={userdata?.picture?.large} alt={userdata?.name?.first} className='w-80 hover:scale-105 transition-all duration-200 ease-linear delay-100' />
           </div>

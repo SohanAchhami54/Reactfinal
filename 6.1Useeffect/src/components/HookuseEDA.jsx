@@ -15,7 +15,8 @@
     },[name])
     return (
       <>
-        <div className='bg-gray-500 text-white text-xl min-h-screen flex flex-col items-center justify-center gap-2'>
+        <div className=' text-white text-xl  flex flex-col items-center justify-center gap-2'>
+          <h1 className='text-2xl font-semibold'>UseEffect with dependency array. </h1>
           <input type="text" 
            placeholder='Enter name' 
            value={name} 
