@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 import Taskmanager from '../components/Taskmanager'
 const Crud = () => { 
@@ -41,7 +41,7 @@ const Crud = () => {
           if(isEditable){
                setTask(prev=> 
                  prev.map(t=>
-                     t.id===editId?{...t,...input}:t
+                     t.id===editId?{...t,...input,updatedAt:new Date().toLocaleString()}:t
                  )
                )
 
@@ -49,7 +49,7 @@ const Crud = () => {
                setIsEditable(false)
 
           }else{
-               setTask([...task,{id:nanoid(),...input}])
+               setTask([...task,{id:nanoid(),...input,createdAt:new Date().toLocaleString()}])
           }
              setInput({
              task:'',
@@ -59,6 +59,17 @@ const Crud = () => {
           })   
                    
           }
+
+    useEffect(()=>{
+               const duty=JSON.parse(localStorage.getItem('tasks'))
+               if(duty && duty.length>0){
+                   setTask(duty)
+               }
+    },[])  
+
+     useEffect(()=>{
+        localStorage.setItem('tasks',JSON.stringify(task))
+     },[task])     
         
 
   return (
@@ -73,7 +84,7 @@ const Crud = () => {
           id='task'
          value={input.task} 
          onChange={handleChange}
-         placeholder='Enter the task'
+         placeholder='Enter the task'   
          className='w-60 md:w-80 border outline-none focus:ring-2' 
       /> 
       </div>
@@ -125,10 +136,10 @@ const Crud = () => {
       <button className='px-2 bg-gray-800 rounded-lg'>Add</button>
       </form>
 
-       <ul className='flex flex-col bg-gray-700  max-w-5xl  mx-auto gap-3 justify-center items-center mt-5 '>
+       <ul className='flex flex-col justify-between  items-center bg-gray-700 m-4  gap-3   '>
         {
             task?.map((t)=>(
-                <li key={t.id}>
+                <li key={t.id} className='p-3'>
                    <Taskmanager  task={t} setTask={setTask} setInput={setInput} setEditId={setEditId}
                     setIsEditable={setIsEditable} />
                 </li>
