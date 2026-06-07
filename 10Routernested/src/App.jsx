@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import ProfileLayout from './components/ProfileLayout';
-import Profile from './components/Profile';
 import Home from './components/Home';
 import Detail from './components/Detail';
 import Post from './components/Post';
