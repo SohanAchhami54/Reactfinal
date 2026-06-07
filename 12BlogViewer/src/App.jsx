@@ -6,6 +6,7 @@ import About from './components/About';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import BlogDetail from './components/BlogDetail';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter( //it acts as a blueprint and read entire structure first.
   createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createBrowserRouter( //it acts as a blueprint and read entire str
       <Route path='/blog' element={<Blog />} />  
       <Route path='/blog/:id' element={<BlogDetail />}/>  
       <Route path='/contact' element={<Contact />} />   
+      <Route path='*' element={<ErrorPage />} />   
     </Route>
   )
 );
