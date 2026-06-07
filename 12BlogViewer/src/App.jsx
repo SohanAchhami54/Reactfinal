@@ -7,6 +7,11 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import BlogDetail from './components/BlogDetail';
 import ErrorPage from './components/ErrorPage';
+import Login from './components/Login';
+import ProtectedRoute from './components/ProtectedRoute';
+import EditPost from './components/EditPost';
+import PublicRoute from './components/PublicRoute';
+
 
 const router = createBrowserRouter( //it acts as a blueprint and read entire structure first.
   createRoutesFromElements(
@@ -15,7 +20,19 @@ const router = createBrowserRouter( //it acts as a blueprint and read entire str
       <Route path='/about' element={<About />} />  
       <Route path='/blog' element={<Blog />} />  
       <Route path='/blog/:id' element={<BlogDetail />}/>  
+            <Route path='/blog/:id/edit' element={
+              <ProtectedRoute>
+                 <EditPost/>
+              </ProtectedRoute>
+              }
+          />
       <Route path='/contact' element={<Contact />} />   
+             <Route path='/login' element={
+                  <PublicRoute>
+                     <Login />
+                  </PublicRoute>
+                }
+              />   
       <Route path='*' element={<ErrorPage />} />   
     </Route>
   )

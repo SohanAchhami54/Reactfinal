@@ -1,13 +1,14 @@
 import React from 'react'
-import { blogreview } from '../data/blogreview'
 import { NavLink} from 'react-router-dom'
-const Blog = () => {
+import { useAuth } from '../context/AuthContext'
+const Blog = () => { 
+  const {blog}=useAuth()
 
   return (
     <div>
        <ul className='flex flex-wrap gap-4 bg-amber-300 p-3'>
         {
-            blogreview?.map((b)=>(
+            blog?.map((b)=>(
                 <NavLink  to={`/blog/${b.id}`} 
                   key={b.id}
                     className='flex justify-center items-center flex-col gap-1 h-80 w-90 bg-gray-300'>
@@ -20,5 +21,4 @@ const Blog = () => {
     </div>
   )
 }
-
 export default Blog

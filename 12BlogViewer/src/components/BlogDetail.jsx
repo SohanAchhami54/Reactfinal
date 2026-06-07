@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import {useParams,useNavigate, useLocation, useSearchParams} from 'react-router-dom'
 import { blogreview } from '../data/blogreview'
+import { useAuth } from '../context/AuthContext'
 const BlogDetail = () => { 
   
   const {id}=useParams()
   const navigate=useNavigate() 
    const location=useLocation()
+   
+   const {blog}=useAuth()
 
    const [searchParams, setSearchParams] = useSearchParams()
-
+    
    const [matchblog,setMatchblog]=useState('') 
    const [loading,setLoading]=useState(true)
 
@@ -23,7 +26,7 @@ const BlogDetail = () => {
     useEffect(()=>{
            //setup function
          const timer= setTimeout(()=>{
-            const blogfound = blogreview.find(b=>b.id===Number(id))
+            const blogfound = blog.find(b=>b.id===Number(id))
              setMatchblog(blogfound)
              setLoading(false)
           },500)
@@ -71,10 +74,15 @@ const BlogDetail = () => {
 
              <button 
                onClick={() => setSearchParams({ ref: 'laptop', sort: 'asc' })}
-               className='px-4 py-2 bg-blue-500 text-white rounded-md'
+               className='px-4 py-2 bg-blue-600 text-white rounded-md'
                >
                Add Query Params 
              </button>
+
+               <button onClick={()=>navigate(`/blog/${id}/edit`)}
+                className='px-4 py-2 bg-blue-600 text-white rounded-md'>
+                 Edit post
+               </button>
               
              <button onClick={()=>navigate(-1)} //this is navigation option 
           className='px-2 py-1 bg-gray-600 rounded-md'>Go Back</button>
