@@ -68,7 +68,14 @@ const BlogDetail = () => {
                   </span>
                 )}
              <span className='text-md p-2 font-medium'>Description:  {matchblog.description} </span>
-             
+
+             <button 
+               onClick={() => setSearchParams({ ref: 'laptop', sort: 'asc' })}
+               className='px-4 py-2 bg-blue-500 text-white rounded-md'
+               >
+               Add Query Params 
+             </button>
+              
              <button onClick={()=>navigate(-1)} //this is navigation option 
           className='px-2 py-1 bg-gray-600 rounded-md'>Go Back</button>
       </div>
