@@ -10,7 +10,7 @@ const Main = () => {
         <div className='bg-transparent sticky top-0'>
            <Header/> 
        </div>
-         <main className='min-h-screen'>
+         <main className='min-h-screen mt-5'>
               <Outlet/>
          </main>
          <Footer/>
