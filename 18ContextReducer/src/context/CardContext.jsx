@@ -2,19 +2,22 @@ import { nanoid } from "nanoid";
 import { createContext, useContext, useReducer } from "react";
 
 const CardStateContext=createContext({
-    items:'',
+    items:[], 
+    cartitems:[],
+    totalprice:()=>{},
+    totalQuantity:()=>{}
 
 })
 const CardDispatchContext=createContext({
-    add:()=>{},
-    remove:()=>{},
-    clear:()=>{},
-    changeQuantity:()=>{}
+    add: () => {},
+    addtocart: () => {},
+    removecart: () => {},
+    removeitem: () => {},
+    clear: () => {},
+    changeQuantity: () => {},
 })
 
-const CardProvider=({children})=>{
-
-    function cardReducer(state,action){
+  function cardReducer(state,action){
 
        switch(action.type){
           case 'ADD':
@@ -23,7 +26,7 @@ const CardProvider=({children})=>{
                 items:[...state.items,{id:nanoid(),...action.payload,quantity:1}]
             }
 
-            case 'ADDTOCART':
+            case 'ADDTOCART':{
                 const existingItemincard=state.cartitems.find(i=>i.id===action.payload.id)
                 
                 if(existingItemincard){
@@ -37,9 +40,11 @@ const CardProvider=({children})=>{
 
                 return {
                     ...state, 
-                     cartitems:[...state.cartitems,{id:nanoid(),...action.payload,quantity:1}]
+                     cartitems:[...state.cartitems,{...action.payload,quantity:1}]
                 }
             }
+        }
+            
 
             case 'REMOVECART': 
             return {
@@ -90,6 +95,9 @@ const CardProvider=({children})=>{
         // totalP:0 
     }
 
+const CardProvider=({children})=>{
+
+  
     const [state,dispatch]=useReducer(cardReducer,initialState)
 
     function add(item){
