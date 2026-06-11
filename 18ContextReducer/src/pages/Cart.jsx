@@ -3,8 +3,7 @@ import { useCart } from '../context/CardContext'
 import useUpdateQuantity from '../hooks/useCart'
 
 const Cart = () => { 
-    const {cartitems}=useCart() 
-    const {totalQuantity,removecart}=useCart()  
+    const {cartitems,totalQuantity,removecart}=useCart()  
      const {updateQuantity}=useUpdateQuantity()
 
      console.log('the card items is:',cartitems)
