@@ -42,7 +42,7 @@ const Weather = () => {
     }
     if(isError) return <p>Error Occur while fetching data.</p>
 
-    console.log('the value of data is:',data) 
+    console.log('the value of data is:',data)
     
   return (
     <div className='min-h-screen bg-gray-600 text-white flex flex-col py-3 justify-center items-center'>
