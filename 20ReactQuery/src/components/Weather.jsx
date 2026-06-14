@@ -1,11 +1,11 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import React, { useMemo, useState } from 'react'
-import { Axios } from '../api/axios'
+import { Axios } from '../api/weatherapi'
 import SkeletonC from './SkeletonCard'
 import WeatherData from './WeatherData'
 
 
-const Weather = ({ queryClient}) => { 
+const Weather = () => { 
     const [city,setCity]=useState('kathmandu') 
     const [searchCity,setSearchCity]=useState('')
     
@@ -28,7 +28,8 @@ const Weather = ({ queryClient}) => {
     // })
     
 
-    const handleSubmit=()=>{
+    const handleSubmit=(e)=>{
+          e.preventDefault()
          setCity(searchCity) 
          setSearchCity('')
     }
