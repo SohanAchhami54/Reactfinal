@@ -16,7 +16,7 @@ const Main = () => {
         <Outlet />
       </main>
       <Footer />
-       <ScrollRestoration />
+       <ScrollRestoration/>
     </div>
   )
 }
