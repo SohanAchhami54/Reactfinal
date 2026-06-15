@@ -1,26 +1,49 @@
-import React, { useState } from 'react'
-import {nanoid} from 'nanoid'
-const Taskform = ({task,setTask}) => { 
+import React, { useEffect, useState } from 'react'
+import { useTask } from '../../context/TaskContext'
+
+const Taskform = () => { 
   const [input,setInput]=useState('') 
   const [description,setDescription]=useState('')
   const [priority,setPriority]=useState('')
   const [completed,setCompleted]=useState(false)
 
+   const {task,setTask,addTask,editTask,iseditable,setIsEditable,editid,setEditId}=useTask()
   const handleSubmit=(e)=>{
     e.preventDefault() 
-    if(!input) return 
-    setTask([...task,{id:nanoid(),title:input,description:description,completed:completed,
-      priority:priority,createdAt:new Date().toLocaleString()
-    }])
+    if(!input || !description || !priority) return 
+    // setTask([...task,{id:nanoid(),title:input,description:description,completed:completed,
+    //   priority:priority,createdAt:new Date().toLocaleString()
+    // }])
+    if(iseditable){
+       editTask(editid,{title:input, description:description,priority:priority}) 
+       setIsEditable(false)
+       setEditId('')
+    }else{
+       addTask(input,description,priority)
+    }
+   
     setInput('')
     setDescription('')
+    setPriority('')
   }
+ 
+
+  useEffect(()=>{
+    if(iseditable){
+        const taskfind=task.find(t=>t.id===editid)
+        setInput(taskfind.title) 
+        setDescription(taskfind.description) 
+        setPriority(taskfind.priority)
+    }
+  },[editid])
+   
+
   console.log('the value of task is:',task)
    return (
     <div className='flex-none'>
-          <div className='h-screen p-4 bg-gray-600 rounded-md'>
+          <div className='h-screen p-4 bg-gray-500 rounded-md'>
         <form onSubmit={handleSubmit} 
-         className='flex  flex-col gap-6  justify-items-start px-5 py-5 bg-gray-700  rounded-md'>
+         className='flex  flex-col gap-6  justify-items-start px-5 py-5  rounded-md'>
 
            <div className='flex flex-col gap-1'>
            <label htmlFor="task">Title: </label>
@@ -54,7 +77,11 @@ const Taskform = ({task,setTask}) => {
              <option value="low">Low</option>
            </select>
            </div>
-           <button className='px-2 py-3 bg-gray-600  rounded-md hover:bg-gray-900 transition'>Add</button>
+           <button className='px-2 py-3 bg-gray-600  rounded-md hover:bg-gray-900 transition'>
+            {
+              iseditable?'Edit':'Add'
+            }
+            </button>
         </form>
         </div>
     </div>
