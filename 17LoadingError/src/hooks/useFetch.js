@@ -2,7 +2,7 @@ import {useState,useEffect} from 'react'
 
   const useFetch=(searchcity)=>{
 
-  const [data, setdata] = useState('')
+  const [data, setdata] = useState(null)
   const [status, setStatus] = useState('idle') 
   const [error,setError]=useState(null)
 
@@ -10,13 +10,14 @@ import {useState,useEffect} from 'react'
     const fetchWeather=()=>{ 
       //remove the old state.
        setStatus('loading')
-       setdata('')
-       setError('')
+       setdata(null)
+       setError(null)
        setTimeout(()=>{
             fetch(`https://api.openweathermap.org/data/2.5/forecast/?q=${searchcity}&appid=${import.meta.env.VITE_OPENWEATHER_API_KEY}`)
        .then(res=>res.json())
        .then(res=>{
-         if(res.cod==='404' || res.cod==='400'){
+        const cod=String(res.cod)
+         if(cod==='404' || cod==='400'){
            setError(`City ${searchcity} not found`) 
            setStatus('error')
            return
@@ -38,7 +39,7 @@ import {useState,useEffect} from 'react'
     fetchWeather()
   },[searchcity])
 
-  return {data,status,setStatus}
+  return {data,status,setStatus,error}
 
 }
   
