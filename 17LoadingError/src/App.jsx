@@ -9,7 +9,7 @@ const App = () => {
    const [searchcity,setSearchCity]=useState('london')
    const [inputcity,setInputCity]=useState('')
 
-   const {data,status,setStatus}=useFetch(searchcity)
+   const {data,status,setStatus,error}=useFetch(searchcity)
 
    const handleSubmit=(e)=>{
     e.preventDefault() 
@@ -53,12 +53,16 @@ const App = () => {
         <ul className='flex flex-wrap justify-center items-center gap-5 p-3 '>
             {
             data?.list?.slice(0,8).map((d)=>(
-              <Task d={d} />
+              <Task key={d.dt} d={d} />
             
             ))
           }  
         </ul>
         )}
+
+        {
+
+        }
     </div>
   )
 }
