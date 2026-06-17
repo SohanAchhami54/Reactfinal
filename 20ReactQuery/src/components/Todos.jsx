@@ -24,12 +24,12 @@ const Todos = () => {
     });
          }
     })
-    const {data,isLoading,isError}=query 
+    const {data,isLoading,isError,error}=query 
     const {isPending,mutate}=mutation
 
 
     if(isLoading) return <p>Loading please wait </p>
-    if(isError) return <p className='text-4xl text-red-500'>Error occur please try again later. </p>
+    if(isError) return <p className='text-4xl text-red-500'>Error occur:{error.message} </p>
      console.log('the value of the todo data is:',data)
 
   return (
