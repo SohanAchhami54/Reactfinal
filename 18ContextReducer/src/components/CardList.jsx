@@ -21,7 +21,6 @@ const CardList = () => {
                      <button onClick={()=>removeitem(t.id)}
                       className='text-start bg-gray-900 py-1 rounded-md'>Remove</button>
                         <button onClick={()=>{
-                               alert('The items has been added')
                                addtocart(t)
                         }}
                          className='bg-gray-400 py-1 rounded-md'>Add to cart</button>
