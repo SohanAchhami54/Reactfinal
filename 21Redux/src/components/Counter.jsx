@@ -7,12 +7,15 @@ const Counter = () => {
     const dispatch=useDispatch()
     const counter=useSelector(state=>state.counter)
   return (
-    <div>
+    <div className='flex flex-col gap-3 justify-center items-center'>
       <h1>This is Counter: {counter.value} </h1>
-      <div className='flex gap-3'>
-        <button onClick={()=>dispatch(increment())}> Increment</button>
-        <button onClick={()=>dispatch(decrement())}>Decrement</button>
-        <button onClick={()=>dispatch(reset())}>Reset</button>
+      <div className='flex items-start   gap-3'>
+        <button className='bg-gray-800 px-2 py-1 rounded-md'
+         onClick={()=>dispatch(increment())}> Increment</button>
+        <button   className='bg-gray-800 px-2 py-1 rounded-md'
+         onClick={()=>dispatch(decrement())}>Decrement</button>
+        <button  className='bg-gray-800 px-2 py-1 rounded-md'
+         onClick={()=>dispatch(reset())}>Reset</button>
         </div>
     </div>
   )
