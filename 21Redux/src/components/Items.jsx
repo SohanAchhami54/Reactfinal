@@ -38,7 +38,7 @@ const Items = () => {
     ]
     const dispatch=useDispatch() 
     const store=useSelector(state=>state)
-    console.log('the value of store is:',store)
+  
 
   return (
     <div className='flex flex-col items-center justify-center gap-2'>
