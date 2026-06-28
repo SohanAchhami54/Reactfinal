@@ -12,13 +12,16 @@ const CartApp = () => {
                 <li key={d.id} className='flex flex-col gap-3 bg-gray-800 rounded-md p-3 items-start '>
                   <span>Name: {d.name} </span>
                   <span>Price: {d.price} </span>
-                   <button className='bg-gray-600 px-2 py-1 rounded-md' 
+
+                   <button aria-label='deletebutton'
+                    className='bg-gray-600 px-2 py-1 rounded-md' 
                    onClick={()=>deleteItem(d.id)} >Delete</button>
                 </li>
             ))
          }
       </ul>
-      <span onClick={()=>addItem()} >Add Item </span>
+      <button aria-label='addbutton'
+       onClick={()=>addItem()} >Add Item </button>
     </div>
   )
 }
