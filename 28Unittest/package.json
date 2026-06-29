@@ -17,6 +17,7 @@
     "@testing-library/user-event": "^14.6.1",
     "coverage": "^0.4.1",
     "jsdom": "^28.1.0",
+    "nanoid": "^5.1.16",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "tailwindcss": "^4.3.1",
