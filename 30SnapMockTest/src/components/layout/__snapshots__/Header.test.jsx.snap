@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header > matches snapshot 1`] = `
+<div>
+  <div>
+    <nav
+      class="flex justify-around items-center py-3 bg-gray-800"
+    >
+      <h1
+        class="text-xl"
+      >
+        SnapShot Testing
+      </h1>
+      <div
+        class="flex gap-2"
+      >
+        <a
+          aria-current="page"
+          class="text-red-500"
+          data-discover="true"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          class=""
+          data-discover="true"
+          href="/about"
+        >
+          About
+        </a>
+        <a
+          class=""
+          data-discover="true"
+          href="/blogpost"
+        >
+          Blog
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+`;
