@@ -1,10 +1,22 @@
 import React from 'react'
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import Main from './components/layout/Main'
+import Home from './pages/Home'
+import About from './pages/About'
+import Todo from './pages/Todo'
 
-const App = () => {
+const App = () => { 
+  const router=createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<Main/>}>
+         <Route index element={<Home/>}/>
+         <Route path='/about' element={<About/>}/>
+         <Route path='/todo' element={<Todo/>}/>
+      </Route>
+    )
+  )
   return (
-    <div>
-      <h1>This is performance optimization.</h1>
-    </div>
+     <RouterProvider router={router}/>
   )
 }
 
