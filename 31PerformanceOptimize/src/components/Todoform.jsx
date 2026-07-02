@@ -35,7 +35,7 @@ const Todoform = () => {
          {...register('todoinput')} 
          placeholder='Enter the todo' 
          aria-label='Enter the todo'
-         className='flex-1 py-1 outline-none border-1 focus:ring-2 rounded-md'
+         className='flex-1 py-1 outline-none border focus:ring-2 rounded-md'
          />
          <button className='py-1 px-2 rounded-md bg-gray-600'>
             {isSubmitting?'Adding...':'Add'}
