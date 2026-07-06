@@ -8,7 +8,7 @@ const Todolist = () => {
     const dispatch=useDispatch() 
     const todos=useSelector(state=>state.todo.todos)  
     const [editingId,setEditingId]=useState(null) 
-    const [editedTitle,setEditedTitle]=useState('') 
+    // const [editedTitle,setEditedTitle]=useState('') 
     
     const [count,setCount]=useState(0)
 
@@ -23,16 +23,16 @@ const Todolist = () => {
     },[dispatch])
 
 
-    const handleEditClick=useCallback((todo)=>{
-      if(editingId){
-          dispatch(updateTodo({id:todo.id,title:editedTitle}))
+    const handleEditClick=useCallback((id,newTitle)=>{
+      if(editingId===id){
+          dispatch(updateTodo({id,title:newTitle}))
           setEditingId(null)
-          setEditedTitle('')
+         
       }else{
-        setEditingId(todo.id) 
-        setEditedTitle(todo.title)
+        setEditingId(id) 
+
       }
-    },[dispatch,editingId,editedTitle])
+    },[dispatch,editingId])
 
 
     const handleIncrement=useCallback(()=>{
@@ -47,14 +47,12 @@ const Todolist = () => {
                key={t.id}
                todo={t}
                isEditing={editingId===t.id} 
-               editedTitle={editedTitle} 
                onToggle={handleToggle}
                onDelete={handleDelete}
-               onEditChange={setEditedTitle}
                onEditClick={handleEditClick}
               />
             ))
-   },[todos, editingId, editedTitle, handleToggle, handleDelete, handleEditClick])
+   },[todos, editingId, handleToggle, handleDelete, handleEditClick])
 
    return (
     <div className='flex flex-col gap-2  items-center mt-6'>
