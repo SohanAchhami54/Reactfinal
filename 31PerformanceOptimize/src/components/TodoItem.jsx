@@ -1,14 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const TodoItem = React.memo(function TodoItem({
     todo,
     isEditing,
-    editedTitle,
     onToggle,
     onDelete,
-    onEditChange,
     onEditClick
 }) {
+    const [localTitle,setLocalTitle]=useState(todo.title)
     return (
         <div className='w-full flex items-center justify-center'>
             <li
@@ -22,8 +21,8 @@ const TodoItem = React.memo(function TodoItem({
                         <span className={todo.completed ? 'line-through' : ''}>
                             Title:
                             <input type="text"
-                                value={isEditing ? editedTitle : todo.title}
-                                onChange={(e) => onEditChange(e.target.value)}
+                                value={isEditing ? localTitle : todo.title}
+                                onChange={(e) => setLocalTitle(e.target.value)}
                                 disabled={!isEditing}
                                 className={`w-40 md:w-60 ${todo.completed ? 'line-through' : ''}`}
                             />
@@ -34,7 +33,7 @@ const TodoItem = React.memo(function TodoItem({
                     <div className='flex gap-2'>
                         <button
                             disabled={todo.completed}
-                            onClick={()=>onEditClick(todo)}
+                            onClick={()=>onEditClick(todo.id,localTitle)}
                             className='px-2 py-1 bg-blue-700 rounded-md'>
                             {isEditing ? 'Save' : 'Edit'}
                         </button>
