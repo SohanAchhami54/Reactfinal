@@ -9,9 +9,7 @@ const Main = () => {
     <div className='text-white bg-gray-600'>
       <Header/> 
         <main className='min-h-screen'>
-            <Suspense fallback={<PageLoader/>}>
-                <Outlet/>
-            </Suspense>
+            <Outlet/>
         </main>
           <ScrollRestoration />
     </div>
