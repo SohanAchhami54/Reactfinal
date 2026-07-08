@@ -4,7 +4,8 @@ import withAuth from '../hoc/withAuth'
 
 
 const Dashboard = () => { 
-    const auth=useSelector(state=>state.auth)
+    const auth=useSelector(state=>state.auth)   
+    // throw new Error('Testing Environment')
    return (
     <div>
       <h1>This is dashboard</h1> 
