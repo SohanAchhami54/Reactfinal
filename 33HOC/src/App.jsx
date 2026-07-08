@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import Login from './components/Login'
 import ProtectedDashboard from './components/Dashboard'
+import ErrorBoundary from './components/ErrorBoundary'
 
 const App = () => { 
   const router=createBrowserRouter(
@@ -15,7 +16,11 @@ const App = () => {
           <Route path='/about'  element={<About/>}/>
           <Route path='/contact'  element={<Contact/>}/>
           <Route path='/login'  element={<Login/>}/>
-          <Route path='/dashboard' element={<ProtectedDashboard/>}/>
+          <Route path='/dashboard' element={
+             <ErrorBoundary fallback={<h2 className='text-red-500 text-3xl'>Dashboard failed to load.</h2>}>
+                  <ProtectedDashboard/>
+             </ErrorBoundary>
+            }/>
       </Route>
     )
   )
@@ -24,3 +29,4 @@ const App = () => {
   )
 }
 export default App
+
