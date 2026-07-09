@@ -16,7 +16,7 @@ const Dashboard = () => {
         <br/>
 
         <button onClick={()=>setIsOpen(true)}
-        className='py-2 px-1 bg-blue-700 '>
+        className='py-2 px-2 bg-blue-700 rounded-md shadow-xl'>
              Open Modal
         </button>
 
