@@ -22,7 +22,10 @@ const App = () => {
              </ErrorBoundary>
             }/>
       </Route>
-    )
+    ),
+    {
+      basename:'/Reactfinal/'
+    }
   )
   return (
     <RouterProvider router={router}/>
