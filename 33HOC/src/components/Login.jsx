@@ -50,6 +50,7 @@ const Login = () => {
            <label htmlFor="email">Email:</label>
            <input type="email" 
             id='email'
+            aria-label='Enter your email'
             placeholder='Enter your email' 
             {...register('email')}
              className='outline-none focus:ring-2 border py-1 rounded-md px-2'
@@ -61,6 +62,7 @@ const Login = () => {
            <label htmlFor="password">Password:</label>
            <input type="password" 
            id='password'
+            aria-label='Enter your password'
             placeholder='Enter your password' 
             {...register('password')}
              className='outline-none focus:ring-2 border py-1 rounded-md px-2'
@@ -68,7 +70,7 @@ const Login = () => {
            {errors.password && (
             <p className='text-red-500'>{errors.password.message} </p>
            )}
-           <button disabled={isSubmitting}
+           <button disabled={isSubmitting} aria-label='Login Button'
             className='bg-gray-500 rounded-md py-1'>
              {isSubmitting?'logging in...':'login'}
            </button>
