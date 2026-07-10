@@ -6,4 +6,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [tailwindcss(),react()],
   base:'/Reactfinal/',
+  test:{
+    globals:true, 
+    environment:'jsdom',
+    setUpFiles:'.src/test/setup.js'
+  }
 })
