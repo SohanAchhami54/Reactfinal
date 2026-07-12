@@ -18,7 +18,6 @@ const App = () => {
     getData()
   },[])
  
-  console.log('the data is:',data)
 
   return (
     <div className='p-4'>
