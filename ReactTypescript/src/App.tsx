@@ -1,4 +1,5 @@
 import Card from "./components/Card.tsx"
+import CardChildren from "./components/CardChildren.tsx"
 import CardForm from "./components/CardForm.tsx"
 import CardList from "./components/CardList.tsx"
 import Counter from "./components/Counter.tsx"
@@ -30,9 +31,16 @@ const App = () => {
       <div>
          <CardList items={menu}/>
       </div>
+       <div>
+        <CardChildren title='React.js' task='Make project in react.js'>
+             <h1>This is CardChildren</h1>
+               <span>We have to learn typescript also. </span>
+        </CardChildren>
+       </div>
       <div>
         <CardForm onSubmit={handleSubmit} />
       </div>
+       
     </div>
   )
 }
