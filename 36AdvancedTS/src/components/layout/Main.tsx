@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, ScrollRestoration } from "react-router-dom"
 import Header from "./Header"
 
 const Main = () => {
@@ -8,6 +8,7 @@ const Main = () => {
         <main className=" min-h-screen p-2">
             <Outlet/>
         </main>
+        <ScrollRestoration/>
     </div>
   )
 }
