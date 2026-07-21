@@ -1,14 +1,18 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 const Login = () => { 
     const [email,setEmail]=useState<string>('')
-    const [password,setPassword]=useState<string>('') 
+    const [password,setPassword]=useState<string>('')  
+
+
+    const inputRef=useRef<HTMLInputElement>(null)
 
     const handleSubmit=(e:React.SubmitEvent<HTMLFormElement>)=>{
         e.preventDefault() 
         console.log('the value of email and password is:',email,password)
         setEmail('') 
-        setPassword('')
+        setPassword('') 
+        inputRef.current?.focus()
     }
   return (
     <div className="flex flex-row min-h-screen">
@@ -21,7 +25,8 @@ const Login = () => {
          className="w-full max-w-sm flex flex-col gap-4 p-4 sm:p-6 bg-gray-400 rounded-md">
              <section className="flex flex-col gap-1">
                   <label htmlFor="email">Email:</label>
-                  <input type="email" 
+                  <input type="email"  
+                   ref={inputRef} 
                    id="email"
                    value={email} 
                    onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setEmail(e.target.value)}
