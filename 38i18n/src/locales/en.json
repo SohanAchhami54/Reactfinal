@@ -1,0 +1,9 @@
+{
+  "title": "My Website",
+  "welcome": "Welcome",
+  "description": "This is a React i18n demo.",
+  "home": "Home",
+  "about": "About",
+  "contact": "Contact",
+  "language": "Language"
+}

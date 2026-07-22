@@ -1,0 +1,9 @@
+{
+  "title": "मेरो वेबसाइट",
+  "welcome": "स्वागत छ",
+  "description": "यो React i18n डेमो हो।",
+  "home": "गृहपृष्ठ",
+  "about": "हाम्रो बारेमा",
+  "contact": "सम्पर्क",
+  "language": "भाषा"
+}
