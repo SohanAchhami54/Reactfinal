@@ -1,0 +1,46 @@
+{
+  "home": "Home",
+  "about": "About",
+  "contact": "Contact",
+  "dashboard": "Dashboard",
+  "login": "Login",
+  "logout": "Logout",
+  "portfolio": "Portfolio",
+  "sohan": "Sohan",
+  "achhami": "Achhami",
+
+  "welcomePortfolio": "Welcome to My Portfolio",
+  "greeting": "Hi, I'm",
+  "portfolioDescription": "This portfolio showcases my frontend development journey. Explore my blog to read articles and check the weather application for real-time weather updates. More projects will be added as I continue learning and building.",
+  "learnMore": "Learn More About Me",
+
+  "blog": "📝 Blog",
+  "blogDescription": "Browse blog posts and explore articles with a clean and responsive reading experience.",
+
+  "weather": "🌦 Weather",
+  "weatherDescription": "Search any city to view current weather conditions and forecasts in a simple, user-friendly interface.",
+
+
+
+
+  "aboutMe": "About Me",
+  "aboutDescription": "Hello! I'm {{name}}, a frontend developer passionate about creating modern, responsive, and user-friendly web applications. I enjoy learning new technologies and improving my development skills by building real-world projects.",
+
+  "currentlyLearning": "Currently Learning",
+  "learning1": "Next.js for building full-stack React applications.",
+  "learning2": "Nest.js for scalable backend development.",
+  "learning3": "Advanced backend architecture and system design.",
+
+  "projects": "Projects",
+  "project1Title": "📝 Blog App",
+  "project1Description": "A blog application where users can browse and read posts with a clean and responsive interface.",
+
+  "project2Title": "🌦 Weather App",
+  "project2Description": "A weather application that provides real-time weather information for cities around the world.",
+
+  "project3Title": "🚲 Bike Rental App",
+  "project3Description": "A bike rental platform where users can browse available bikes, make bookings, and manage rentals.",
+
+  "myGoal": "My Goal",
+  "goalDescription": "My goal is to become a skilled full-stack developer by building high-quality applications with modern technologies. I enjoy solving problems, learning continuously, and creating software that provides an excellent user experience."
+}
