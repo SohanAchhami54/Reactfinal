@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
-import type { Weather } from "../types";
 
 const App = () => {
   const [city, setCity] = useState(
