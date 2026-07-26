@@ -18,7 +18,7 @@ const Blogpost = ({d}:BlogPostProps) => {
                              alt='image' />
                           </div>
                          ):(
-                         <div className="h-40 w-full bg-gray-800 rounded-md">
+                         <div className="flex justify-center items-center h-40 w-full bg-gray-800 rounded-md">
                             <p>No image found.</p>
                          </div>
                         )
