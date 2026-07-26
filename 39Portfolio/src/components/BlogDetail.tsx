@@ -31,13 +31,13 @@ const BlogDetail = () => {
 
 
    return (
-    <div className="flex flex-col gap-3 text-white max-w-sm md:max-w-md lg:max-w-4xl mx-auto">
+    <div className="flex flex-col gap-3 text-white max-w-sm md:max-w-md lg:max-w-4xl mx-auto pt-8">
        <h1>BlogDetail</h1>      
          {
                 data?.cover_image ? 
                 <img src={data?.cover_image} alt="coverimage" />
                 :
-                <div className='h-50 bg-gray-800'>
+                <div className='h-50 bg-gray-800 flex justify-center items-center'>
                     <h1>Cover image do not found</h1>
                 </div>
             }
