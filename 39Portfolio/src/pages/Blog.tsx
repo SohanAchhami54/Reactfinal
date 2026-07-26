@@ -40,7 +40,7 @@ const Blog = () => {
     const totalPages=30
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 pt-5">
         {/* this is for button  */}
        <div className="flex   justify-between items-center"> 
 
