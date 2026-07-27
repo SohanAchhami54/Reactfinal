@@ -54,19 +54,20 @@ const Login = () => {
                <input type="email" 
                {...register('email')} 
                placeholder="Enter your email" 
+               aria-label="email"
                className="outline-none border py-1 focus:ring-2 rounded-md "
                />
                {errors.email && (
                 <p className="text-red-600">{errors.email.message} </p>
                )}
                </div>
-
-
+               
               <div className="flex flex-col gap-1">
                <label htmlFor="password">Password:</label> 
                <input type="password" 
                {...register('password')} 
                placeholder="Enter your password" 
+               aria-label="password"
                className="outline-none border py-1 focus:ring-2 rounded-md"
                /> 
                {errors.password && (
@@ -74,7 +75,7 @@ const Login = () => {
                )}
                </div>
 
-               <Button type="submit" variant="outlined" color="warning">
+               <Button type="submit" variant="outlined" color="warning" aria-label="login">
                  {isSubmitting?'Logining...':'Login'}
 
                </Button>
