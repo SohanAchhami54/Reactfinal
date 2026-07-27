@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 
-const App = () => {
+const Weather = () => {
   const [city, setCity] = useState(
     localStorage.getItem("cityname") || "kathmandu"
-  );
-  const [inputcity, setInputCity] = useState("");
-  const [data] = useFetch(city);
+  )
+  const [inputcity, setInputCity] = useState("")
+  const [data] = useFetch(city)
 
   useEffect(() => {
-    localStorage.setItem("cityname", city);
-  }, [city]);
+    localStorage.setItem("cityname", city)
+  }, [city])
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    if (!inputcity.trim()) return;
+    if (!inputcity.trim()) return
 
     setCity(inputcity)
     setInputCity("")
@@ -29,7 +29,7 @@ const App = () => {
           This is Example of Axios.
         </h1>
 
-        <h1 className="text-center text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium break-words">
+        <h1 className="text-center text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium ">
           City: {city.toUpperCase()}
         </h1>
 
@@ -46,10 +46,15 @@ const App = () => {
             type="text"
             id="city"
             value={inputcity}
-            onChange={(e) => setInputCity(e.target.value)}
+            onChange={(e:React.ChangeEvent<HTMLInputElement>) => setInputCity(e.target.value)}
             placeholder="Enter the name of the city"
+            aria-label="Enter city name"
             className="border rounded-md outline-none focus:ring-2  py-2 px-3 w-full sm:max-w-sm text-white"
           />
+          <button aria-label="Search button"
+           className="bg-gray-800 py-2 px-2 rounded-md">
+            Search
+          </button>
         </form>
 
         {/* Weather Details */}
@@ -125,4 +130,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Weather;
