@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <div>
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-gray-900/70 px-4 py-4 backdrop-blur-md  border-white/10 md:justify-around">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-gray-900/70 px-4 py-2 md:py-4 backdrop-blur-md  border-white/10 md:justify-around">
         <h1 className="text-xl">{t("portfolio")} </h1>
 
          {/* hamburger  */}
