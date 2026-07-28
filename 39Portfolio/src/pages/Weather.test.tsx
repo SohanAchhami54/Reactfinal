@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import "@testing-library/jest-dom/vitest"
 import Weather from "./Weather"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import type { ReactElement } from "react"
+import type { ReactNode } from "react"
 import { useFetch } from "../hooks/useFetch" 
 import userEvent from "@testing-library/user-event"
 
@@ -14,7 +14,7 @@ vi.mock('../hooks/useFetch',()=>({
 
 const mockedUseFetch=vi.mocked(useFetch)
 
-function renderWithClient(ui:ReactElement){
+function renderWithClient(ui:ReactNode){
     const queryclient=new QueryClient({
         defaultOptions:{
             queries:{
@@ -29,7 +29,7 @@ function renderWithClient(ui:ReactElement){
         </QueryClientProvider>
     )
 }
-
+    
 const mockWeatherData = {
   coord: { lon: 85.32, lat: 27.7 },
   main: {
