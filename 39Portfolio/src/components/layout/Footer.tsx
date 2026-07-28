@@ -8,8 +8,8 @@ const navLinkStyle = ({ isActive }:NavLinkRenderProps) =>
 const Footer = () => {
   return (
     <footer className="mt-16 border-t border-gray-800 bg-gray-900">
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 items-start">
+      <div className="mx-auto max-w-7xl px-6 py-5  md:py-12">
+        <div className="grid grid-cols-1 gap-5 md:gap-10 md:grid-cols-3 items-start">
           {/* Copyright */}
           <div>
             <p className="text-gray-400">
@@ -25,7 +25,7 @@ const Footer = () => {
               Quick Links
             </h3>
 
-            <nav className="flex flex-wrap gap-6">
+            <nav className="flex flex-wrap  gap-3">
               <NavLink to="/" className={navLinkStyle}>
                 Home
               </NavLink>
