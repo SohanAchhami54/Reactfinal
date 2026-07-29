@@ -2,7 +2,7 @@ import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
 
-export default function CircularEnableTrack() {
+export default function CircularDeterminate() {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
@@ -17,7 +17,11 @@ export default function CircularEnableTrack() {
 
   return (
     <Stack spacing={2} direction="row">
-      <CircularProgress enableTrackSlot size="3rem" aria-label="Loading…" />
+        <CircularProgress
+        variant="indeterminate"
+        value={progress}
+        aria-label="Export data"
+      />
     </Stack>
   );
 }
