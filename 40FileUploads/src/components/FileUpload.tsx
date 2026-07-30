@@ -47,7 +47,7 @@ const FileUpload = () => {
     }
 
     return (
-        <div>
+        <div className="max-w-md">
             <h1 className="font-semibold text-2xl">File Upload</h1>
 
             <form onSubmit={handleFileUpload} className="flex flex-col gap-2">
